@@ -40,22 +40,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['course_id'])) {
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">Student Portal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.php">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="attendance.php">Attendance</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="index.php">Student Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="courses.php">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="attendance.php">Attendance</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+            </ul>
         </div>
-    </nav>
-
+    </div>
+</nav>
     <div class="container py-5">
         <h2 class="text-center mb-4">Welcome to Student Portal</h2>
         
