@@ -39,11 +39,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['course_id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">Student Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.php">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="attendance.php">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container py-5">
         <h2 class="text-center mb-4">Welcome to Student Portal</h2>
         
         <div class="row">
-            <!-- Enrolled Courses -->
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-header bg-primary text-white">Your Enrolled Courses</div>
@@ -65,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['course_id'])) {
                 </div>
             </div>
 
-            <!-- Available Courses -->
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-header bg-success text-white">Enroll in a Course</div>
@@ -84,37 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['course_id'])) {
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Attendance Record -->
-        <div class="card">
-            <div class="card-header bg-warning text-dark">Mark Attendance</div>
-            <div class="card-body">
-                <form method="POST" action="">
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <label for="attend_course" class="form-label">Select Course</label>
-                            <select name="attend_course" id="attend_course" class="form-select">
-                                <?php foreach ($enrolled_courses as $course_id => $course_data): ?>
-                                    <option value="<?php echo $course_id; ?>"><?php echo $course_data['course_name']; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="attendance_status" class="form-label">Attendance Status</label>
-                            <select name="attendance_status" id="attendance_status" class="form-select">
-                                <option value="Present">Present</option>
-                                <option value="Absent">Absent</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="attendance_date" class="form-label">Date</label>
-                            <input type="date" name="attendance_date" class="form-control" required>
-                        </div>
-                    </div>
-                    <button type="submit" name="mark_attendance" class="btn btn-warning">Mark Attendance</button>
-                </form>
             </div>
         </div>
     </div>
